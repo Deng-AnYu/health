@@ -1,0 +1,10 @@
+com\my\health\pojo\Menu.class
+com\my\health\pojo\Setmeal.class
+com\my\health\pojo\Permission.class
+com\my\health\pojo\User.class
+com\my\health\pojo\Role.class
+com\my\health\pojo\CheckGroup.class
+com\my\health\pojo\Member.class
+com\my\health\pojo\CheckItem.class
+com\my\health\pojo\Order.class
+com\my\health\pojo\OrderSetting.class
