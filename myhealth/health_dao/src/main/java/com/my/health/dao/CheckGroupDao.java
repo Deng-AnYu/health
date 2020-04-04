@@ -1,5 +1,7 @@
 package com.my.health.dao;
 
+import com.my.health.pojo.CheckGroup;
+
 import java.util.Map;
 
 /**
@@ -11,4 +13,9 @@ public interface CheckGroupDao {
 
     Map findAllItem();
 
+    void add(CheckGroup checkGroup);
+
+    void addLinked(Map<String, Integer> map);
+
+    int selectByCondition(String code);
 }

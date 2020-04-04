@@ -3,5 +3,30 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.my.health.dao.CheckGroupDao">
 
+    <!--<insert id="add" parameterType="com.my.health.pojo.CheckGroup">-->
+        <!--<selectKey resultType="int" order="AFTER" keyProperty="id">-->
+            <!--select LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+     <!--insert into t_checkgroup (code,name,helpCode,sex,remark,attention)-->
+        <!--values (#{code},#{name},#{helpCode},#{sex},#{remark},#{attention})-->
+    <!--</insert>-->
 
+    <insert id="add" parameterType="com.my.health.pojo.CheckGroup">
+        /*获取插入成功的主键id 设置到CheckGroup对象id属性上*/
+        <selectKey resultType="int" order="AFTER" keyProperty="id">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into t_checkgroup (code,name,helpCode,sex,remark,attention)
+        values (#{code},#{name},#{helpCode},#{sex},#{remark},#{attention})
+    </insert>
+
+    <insert id="addLinked" parameterType="map">
+        insert into t_checkgroup_checkitem
+        (checkgroup_id,checkitem_id) values
+        (#{checkgroupId},#{checkitemId})
+    </insert>
+
+    <select id="selectByCondition" parameterType="int" resultType="int">
+        select * from
+    </select>
 </mapper>
