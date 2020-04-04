@@ -2,6 +2,7 @@ package com.my.health.dao;
 
 import com.my.health.pojo.CheckGroup;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -11,11 +12,20 @@ import java.util.Map;
  */
 public interface CheckGroupDao {
 
-    Map findAllItem();
-
     void add(CheckGroup checkGroup);
 
     void addLinked(Map<String, Integer> map);
 
-    int selectByCondition(String code);
+    List<CheckGroup> selectByCondition(String code);
+
+    Integer[] findGroupLinkedItem(Integer id);
+
+    CheckGroup findGroupById(Integer id);
+
+    void editCheckGroup(CheckGroup checkGroup);
+
+    void deleteLinked(Integer id);
+
+    void deleteGroupById(Integer id);
+
 }

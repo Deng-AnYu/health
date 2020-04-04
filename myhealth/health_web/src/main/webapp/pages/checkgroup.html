@@ -286,19 +286,28 @@
         methods: {
             //编辑
             handleEdit() {
+                axios.post("/checkGroup/edit.do?checkitemIds=" + this.checkitemIds, this.formData).then(res => {
+                    this.$message({
+                        message: res.data.message,
+                        type: res.data.flag ? "success" : "error"
+                    });
+                    if (res.data.flag) {
+                        this.dialogFormVisible4Edit = false;
+                        this.findPage();
+                    }
+                });
             },
             //添加
             handleAdd() {
                 //要传什么参数呢CheckGroup对象
-                alert("check");
-                axios.post("/checkGroup/add.do?checkitemIds="+this.checkitemIds,this.formData).then(res => {
+                axios.post("/checkGroup/add.do?checkitemIds=" + this.checkitemIds, this.formData).then(res => {
                     this.$message({
                         message: res.data.message,
                         type: res.data.flag ? "success" : "error"
                     });
                     if (res.data.flag) {
                         this.dialogFormVisible = false;
-                    this.findPage();
+                        this.findPage();
                     }
                 });
 
@@ -312,9 +321,9 @@
                     queryString: this.pagination.queryString
                 }
 
-                axios.post("/checkGroup/findPage.do?",params).then(res => {
-                        this.dataList = res.data.rows;
-                        this.pagination.total = res.data.total;
+                axios.post("/checkGroup/findPage.do?", params).then(res => {
+                    this.dataList = res.data.rows;
+                    this.pagination.total = res.data.total;
                 });
             },
             // 重置表单
@@ -334,12 +343,42 @@
             },
             // 弹出编辑窗口
             handleUpdate(row) {
+                this.resetForm();
+                //发请求获取检查项数据
+                axios.post("/checkitem/findAll.do").then(res => {
+                    this.tableData = res.data.data;
+                });
+                //发请求获取检查组信息
+                axios.post("/checkGroup/findGroupAndLinkedItem.do?id="+row.id).then(res => {
+                    this.$message({
+                        message: res.data.message,
+                        type: 'success'  ///成功
+                    });
+                    if (res.data.flag){
+                        this.checkitemIds=res.data.data.ids;
+                        this.formData=res.data.data.checkGroup;
+                    }
+                });
+
+                this.dialogFormVisible4Edit=true;
             },
             //切换页码
             handleCurrentChange(currentPage) {
+
+                this.pagination.currentPage=currentPage;
+                this.findPage();
             },
             // 删除
             handleDelete(row) {
+                axios.post("/checkGroup/deleteById.do?id="+row.id).then(res => {
+                    this.$message({
+                        message: res.data.message,
+                        type: 'success'  ///成功
+                    });
+                    if (res.data.flag){
+                        this.findPage();
+                    }
+                });
             }
         }
     })

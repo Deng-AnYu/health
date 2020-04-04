@@ -2,6 +2,7 @@ package com.my.health.dao;
 
 import com.my.health.PageResult;
 import com.my.health.QueryPageBean;
+import com.my.health.pojo.CheckGroup;
 import com.my.health.pojo.CheckItem;
 
 import java.util.List;
@@ -27,4 +28,6 @@ public interface CheckItemDao {
     CheckItem findById(Integer id);
 
     void edit(CheckItem checkItem);
+
+
 }
