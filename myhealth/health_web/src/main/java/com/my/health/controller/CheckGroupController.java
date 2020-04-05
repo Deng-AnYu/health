@@ -1,19 +1,16 @@
 package com.my.health.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.my.health.MessageConstant;
-import com.my.health.PageResult;
-import com.my.health.QueryPageBean;
-import com.my.health.Result;
+import com.my.health.constant.MessageConstant;
+import com.my.health.pojo.PageResult;
+import com.my.health.pojo.QueryPageBean;
+import com.my.health.pojo.Result;
 import com.my.health.pojo.CheckGroup;
-import com.my.health.pojo.CheckItem;
 import com.my.health.service.CheckGroupService;
-import com.my.health.service.CheckItemService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -93,6 +90,12 @@ public class CheckGroupController {
             e.printStackTrace();
             return new Result(false,MessageConstant.DELETE_CHECKGROUP_FAIL);
         }
+    }
+
+    //获取所有的检查组
+    @RequestMapping("/findAllGroup")
+    public List<CheckGroup> findAllGroup(){
+        return checkGroupService.findAllGroup();
     }
 
 }

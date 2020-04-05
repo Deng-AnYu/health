@@ -1,2 +1,3 @@
-com\my\health\dao\CheckItemDao.class
+com\my\health\dao\SetmealDao.class
 com\my\health\dao\CheckGroupDao.class
+com\my\health\dao\CheckItemDao.class

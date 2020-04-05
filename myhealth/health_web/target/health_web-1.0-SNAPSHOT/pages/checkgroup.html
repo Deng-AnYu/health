@@ -375,6 +375,9 @@
                         message: res.data.message,
                         type: 'success'  ///成功
                     });
+                    if (res.data.flag){
+                        this.findPage();
+                    }
                 });
             }
         }

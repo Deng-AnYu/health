@@ -71,4 +71,8 @@
         delete from t_checkgroup where id=#{id}
     </delete>
 
+    <!--获取所有检查组-->
+    <select id="findAllGroup" resultType="com.my.health.pojo.CheckGroup">
+        select * from t_checkgroup
+    </select>
 </mapper>

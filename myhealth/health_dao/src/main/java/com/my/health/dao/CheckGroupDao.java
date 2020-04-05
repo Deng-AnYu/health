@@ -28,4 +28,6 @@ public interface CheckGroupDao {
 
     void deleteGroupById(Integer id);
 
+    List<CheckGroup> findAllGroup();
+
 }

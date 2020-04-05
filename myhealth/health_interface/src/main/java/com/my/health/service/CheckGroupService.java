@@ -1,10 +1,10 @@
 package com.my.health.service;
 
-import com.alibaba.dubbo.config.annotation.Service;
-import com.my.health.PageResult;
-import com.my.health.QueryPageBean;
+import com.my.health.pojo.PageResult;
+import com.my.health.pojo.QueryPageBean;
 import com.my.health.pojo.CheckGroup;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,4 +23,7 @@ public interface CheckGroupService {
     void edit(CheckGroup checkGroup, Integer[] checkitemIds);
 
     void deleteById(Integer id);
+
+    List<CheckGroup> findAllGroup();
+
 }

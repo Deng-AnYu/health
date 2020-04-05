@@ -1,2 +1,3 @@
 com\my\health\service\impl\CheckGroupServiceImpl.class
 com\my\health\service\impl\CheckItemServiceImpl.class
+com\my\health\service\impl\SetmealServiceImpl.class

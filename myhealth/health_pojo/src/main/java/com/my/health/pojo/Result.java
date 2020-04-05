@@ -1,4 +1,4 @@
-package com.my.health;
+package com.my.health.pojo;
 
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
 package com.my.health.service;
 
-import com.my.health.PageResult;
-import com.my.health.QueryPageBean;
+import com.my.health.pojo.PageResult;
+import com.my.health.pojo.QueryPageBean;
 import com.my.health.pojo.CheckItem;
 
 import java.util.List;

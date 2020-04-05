@@ -19,10 +19,6 @@
             where code like #{value} or name like #{value}
         </if>
     </select>
-    <!--这个也不行-->
-    <!--where code like CONCAT('%',#{value,jdbcType=VARCHAR},'%') or name like CONCAT('%',#{value,jdbcType=VARCHAR},'%')-->
-    <!--这个也不能用-->
-    <!--where code "%"like #{value}"%" or name like "%"#{value}"%"-->
 
 
     <select id="checkItemWithGroup" parameterType="int" resultType="int">

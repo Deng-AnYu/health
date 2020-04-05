@@ -3,12 +3,10 @@ package com.my.health.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.my.health.PageResult;
-import com.my.health.QueryPageBean;
+import com.my.health.pojo.PageResult;
+import com.my.health.pojo.QueryPageBean;
 import com.my.health.dao.CheckGroupDao;
-import com.my.health.dao.CheckItemDao;
 import com.my.health.pojo.CheckGroup;
-import com.my.health.pojo.CheckItem;
 import com.my.health.service.CheckGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -96,6 +94,11 @@ public class CheckGroupServiceImpl implements CheckGroupService {
     public void deleteById(Integer id) {
         checkGroupDao.deleteLinked(id);
         checkGroupDao.deleteGroupById(id);
+    }
+
+    @Override
+    public List<CheckGroup> findAllGroup() {
+        return checkGroupDao.findAllGroup();
     }
 
 

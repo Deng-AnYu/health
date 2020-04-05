@@ -287,7 +287,7 @@
                 }
 
                 axios.post('/checkitem/findPage.do', params).then(res => {
-                    //com.my.health.PageResult  == res.data
+                    //com.my.health.pojo.PageResult  == res.data
                     this.dataList = res.data.rows;
                     this.pagination.total = res.data.total;
                 })
@@ -302,7 +302,7 @@
                 }
                 //查询所有检查项数据
                 axios.post('/checkitem/findAll.do').then(res => {
-                    //com.my.health.Result  == res.data;
+                    //com.my.health.pojo.Result  == res.data;
                     if (res.data.flag) {
                         //弹出成提示
                         this.$message({

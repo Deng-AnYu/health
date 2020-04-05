@@ -1,4 +1,3 @@
-com\my\health\MessageConstant.class
-com\my\health\QueryPageBean.class
-com\my\health\PageResult.class
-com\my\health\Result.class
+com\my\health\constant\MessageConstant.class
+com\my\health\constant\RedisConstant.class
+com\my\health\util\QiniuUtils.class

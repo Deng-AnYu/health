@@ -1,10 +1,10 @@
 package com.my.health.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.my.health.MessageConstant;
-import com.my.health.PageResult;
-import com.my.health.QueryPageBean;
-import com.my.health.Result;
+import com.my.health.constant.MessageConstant;
+import com.my.health.pojo.PageResult;
+import com.my.health.pojo.QueryPageBean;
+import com.my.health.pojo.Result;
 import com.my.health.pojo.CheckItem;
 import com.my.health.service.CheckItemService;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,10 +31,10 @@ public class CheckItemController {
     public Result findAll() {
         try {
             List<CheckItem> list = checkItemService.findAll();
-            return new Result(true, "获取所有成功", list);
+            return new Result(true, MessageConstant.QUERY_CHECKITEM_SUCCESS, list);
         } catch (Exception e) {
             e.printStackTrace();
-            return new Result(false, "获取所有失败");
+            return new Result(false, MessageConstant.QUERY_CHECKITEM_FAIL);
         }
     }
 
@@ -43,10 +43,10 @@ public class CheckItemController {
     public Result add(@RequestBody CheckItem checkItem) {
         try {
             checkItemService.add(checkItem);
-            return new Result(true, "添加检查项成功");
+            return new Result(true, MessageConstant.ADD_CHECKITEM_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
-            return new Result(false, "添加检查项失败");
+            return new Result(false, MessageConstant.ADD_CHECKITEM_FAIL);
         }
     }
 
@@ -55,7 +55,6 @@ public class CheckItemController {
     @RequestMapping("/findPage")
     public PageResult findPage(@RequestBody QueryPageBean queryPageBean) {
         try {
-//            todo 模糊搜索-web
             String queryString = queryPageBean.getQueryString();
             if (queryString != null && !queryString.equals("")) {
                 queryString = "%" + queryString + "%";
