@@ -3,10 +3,7 @@ package com.my.health.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.my.health.constant.MessageConstant;
 import com.my.health.constant.RedisConstant;
-import com.my.health.pojo.PageResult;
-import com.my.health.pojo.QueryPageBean;
-import com.my.health.pojo.Result;
-import com.my.health.pojo.Setmeal;
+import com.my.health.pojo.*;
 import com.my.health.service.SetmealService;
 import com.my.health.util.QiniuUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import redis.clients.jedis.JedisPool;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -94,4 +92,27 @@ public class SetmealController {
         }
     }
 
+    //编辑套餐所需的参数
+    @RequestMapping("/findSetmealAndLinkedGroup")
+    public Result findSetmealAndLinkedGroup(Integer id) {
+        try {
+            Map map = setmealService.findGroupAndLinkedItem(id);
+            return new Result(true, MessageConstant.QUERY_SETMEAL_SUCCESS, map);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(true, MessageConstant.QUERY_SETMEAL_FAIL);
+        }
+    }
+
+    //编辑套餐
+    @RequestMapping("/edit")
+    public Result edit(@RequestBody Setmeal setmeal, Integer[] checkgroupIds ) {
+        try {
+            setmealService.edit(setmeal,checkgroupIds);
+            return new Result(true,MessageConstant.EDIT_SETMEAL_SUCCESS);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,MessageConstant.EDIT_SETMEAL_FAIL);
+        }
+    }
 }

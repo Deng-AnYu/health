@@ -3,6 +3,7 @@ package com.my.health.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.my.health.pojo.CheckGroup;
 import com.my.health.pojo.PageResult;
 import com.my.health.pojo.QueryPageBean;
 import com.my.health.dao.SetmealDao;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: Deng
@@ -61,6 +63,41 @@ public class SetmealServiceImpl implements SetmealService {
         //先把关联删了,再把套餐删了
         setmealDao.deleteLinked(id);
         setmealDao.deleteById(id);
+
+    }
+
+    @Override
+    public Map findGroupAndLinkedItem(Integer id) {
+
+        //根据id获取关联的检查项
+        Integer[] ids = setmealDao.findSetmealLinkedGroup(id);
+        //根据id获取这个检查组的信息
+        Setmeal setmeal=setmealDao.getSetmealById(id);
+
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("ids", ids);
+        map.put("setmeal", setmeal);
+        return map;
+
+    }
+
+    //编辑套餐
+    @Override
+    public void edit(Setmeal setmeal, Integer[] checkgroupIds) {
+        //修改表
+        setmealDao.editSetmeal(setmeal);
+        //先删除原有的所有关系
+        setmealDao.deleteLinked(setmeal.getId());
+        //在重新建立一遍
+        if (checkgroupIds != null && checkgroupIds.length > 0) {
+            HashMap<String, Integer> map = new HashMap<>();
+            map.put("setmealId", setmeal.getId());
+            for (Integer checkgroupId : checkgroupIds) {
+                map.put("checkgroupId", checkgroupId);
+                setmealDao.addLinked(map);
+            }
+        }
+
 
     }
 }

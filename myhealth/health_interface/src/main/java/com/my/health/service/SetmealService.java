@@ -4,6 +4,8 @@ import com.my.health.pojo.PageResult;
 import com.my.health.pojo.QueryPageBean;
 import com.my.health.pojo.Setmeal;
 
+import java.util.Map;
+
 /**
  * @Author: Deng
  * @date: 2020-04-04 20:39
@@ -15,4 +17,8 @@ public interface SetmealService {
     PageResult findPage(QueryPageBean queryPageBean);
 
     void deleteById(Integer id, Integer[] checkgroupIds);
+
+    Map findGroupAndLinkedItem(Integer id);
+
+    void edit(Setmeal setmeal, Integer[] checkgroupIds);
 }

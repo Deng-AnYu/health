@@ -20,4 +20,10 @@ public interface SetmealDao {
     void deleteLinked(Integer id);
 
     void deleteById(Integer id);
+
+    Integer[] findSetmealLinkedGroup(Integer id);
+
+    Setmeal getSetmealById(Integer id);
+
+    void editSetmeal(Setmeal setmeal);
 }

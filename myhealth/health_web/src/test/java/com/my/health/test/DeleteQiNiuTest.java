@@ -1,3 +1,4 @@
+/*
 package com.my.health.test;
 
 import com.my.health.constant.RedisConstant;
@@ -12,11 +13,13 @@ import redis.clients.jedis.JedisPool;
 
 import java.util.Set;
 
+*/
 /**
  * @Author: Deng
  * @date: 2020-04-04 22:59
  * @description:
- */
+ *//*
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring-redis.xml")
 public class DeleteQiNiuTest {
@@ -40,3 +43,4 @@ public class DeleteQiNiuTest {
     }
 
 }
+*/

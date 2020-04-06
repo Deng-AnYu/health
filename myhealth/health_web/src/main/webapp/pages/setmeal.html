@@ -419,9 +419,36 @@
             },
             //编辑
             handleEdit() {
+                axios.post("/setmeal/edit.do?checkgroupIds=" + this.checkgroupIds, this.formData).then(res => {
+                    this.$message({
+                        message: res.data.message,
+                        type: res.data.flag ? "success" : "error"
+                    });
+                    if (res.data.flag) {
+                        this.dialogFormVisible4Edit = false;
+                        this.findPage();
+                    }
+                });
+
 
             },
             handleUpdate(row) {
+                this.resetForm();
+                axios.post("/checkGroup/findAllGroup.do").then(res => {
+                    this.tableData = res.data;
+                });
+                axios.post("/setmeal/findSetmealAndLinkedGroup.do?id="+row.id).then(res => {
+                    this.$message({
+                        message: res.data.message,
+                        type: 'success'  ///成功
+                    });
+                    if (res.data.flag){
+                        this.checkgroupIds=res.data.data.ids;
+
+                        this.formData=res.data.data.setmeal;
+                    }
+                });
+                this.dialogFormVisible4Edit = true;
 
             },
             handleDelete(row) {

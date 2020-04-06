@@ -67,4 +67,6 @@ public class MessageConstant {
     public static final String ERROR_CHECKITEM_CHECKGROUP = "删除检查项失败,因为与检查组还有关联";
     public static final String DELETE_SETMEAL_SUCCESS = "删除套餐成功";
     public static final String DELETE_SETMEAL_FAIL = "删除套餐失败";
+    public static final String EDIT_SETMEAL_SUCCESS = "编辑套餐成功";
+    public static final String EDIT_SETMEAL_FAIL = "编辑套餐失败";
 }
