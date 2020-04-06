@@ -1,3 +1,4 @@
 com\my\health\constant\MessageConstant.class
 com\my\health\constant\RedisConstant.class
 com\my\health\util\QiniuUtils.class
+com\my\health\util\POIUtils.class

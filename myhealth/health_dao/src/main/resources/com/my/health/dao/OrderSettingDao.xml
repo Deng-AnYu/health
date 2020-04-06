@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.my.health.dao.OrderSettingDao">
+
+    <!--查询这个日期是否存在-->
+    <select id="isExist" parameterType="date" resultType="int">
+         select count(*) from t_ordersetting where orderDate = #{orderDate}
+    </select>
+
+    <!--修改日期存储-->
+    <update id="updateOrder" parameterType="com.my.health.pojo.OrderSetting">
+          update t_ordersetting set number = #{number} where orderDate = #{orderDate}
+    </update>
+
+    <!--保存这个日期的数据-->
+    <insert id="addOrder" parameterType="com.my.health.pojo.OrderSetting">
+        insert into t_ordersetting (orderDate,number,reservations)
+        values (#{orderDate},#{number},#{reservations})
+    </insert>
+
+
+</mapper>
