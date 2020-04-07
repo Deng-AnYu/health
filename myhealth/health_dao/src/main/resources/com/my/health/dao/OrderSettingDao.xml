@@ -5,7 +5,7 @@
 
     <!--查询这个日期是否存在-->
     <select id="isExist" parameterType="date" resultType="int">
-         select count(*) from t_ordersetting where orderDate = #{orderDate}
+         select count(*) from t_ordersetting where  orderDate= #{orderDate}
     </select>
 
     <!--修改日期存储-->
@@ -19,5 +19,8 @@
         values (#{orderDate},#{number},#{reservations})
     </insert>
 
+    <select id="getDataByYearAndMonth" parameterType="string" resultType="com.my.health.pojo.MyOrderSetting">
+        select * from t_ordersetting where orderDate BETWEEN #{dateBegin} and #{dateEnd};
+    </select>
 
 </mapper>

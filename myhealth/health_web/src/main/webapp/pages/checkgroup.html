@@ -352,7 +352,7 @@
                 axios.post("/checkGroup/findGroupAndLinkedItem.do?id="+row.id).then(res => {
                     this.$message({
                         message: res.data.message,
-                        type: 'success'  ///成功
+                        type: res.data.flag ? "success" : "error"
                     });
                     if (res.data.flag){
                         this.checkitemIds=res.data.data.ids;
@@ -373,7 +373,7 @@
                 axios.post("/checkGroup/deleteById.do?id="+row.id).then(res => {
                     this.$message({
                         message: res.data.message,
-                        type: 'success'  ///成功
+                        type: res.data.flag ? "success" : "error"
                     });
                     if (res.data.flag){
                         this.findPage();

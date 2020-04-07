@@ -7,6 +7,7 @@ com\my\health\pojo\Menu.class
 com\my\health\pojo\Result.class
 com\my\health\pojo\User.class
 com\my\health\pojo\PageResult.class
+com\my\health\pojo\MyOrderSetting.class
 com\my\health\pojo\Role.class
 com\my\health\pojo\Member.class
 com\my\health\pojo\Order.class

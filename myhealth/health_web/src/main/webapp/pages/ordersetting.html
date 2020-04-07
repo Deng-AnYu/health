@@ -136,9 +136,22 @@
             },
             created: function () {//在vue初始化时调用
                 this.initData(null);
+                this.createData();
             },
             methods: {
-				//预约设置
+                createData(){
+                    axios.post("/ordersetting/getDataByYearAndMonth.do?date="+this.currentYear+"-"+this.LocalMonth).then(res => {
+                        this.$message({
+                            message: res.data.message,
+                            type: res.data.flag ? "success" : "error"
+                        });
+                        if (res.data.flag){
+                            this.leftobj=res.data.data;
+                        }
+                    });
+
+                },
+				//预约设置f
                 handleOrderSet(day){
                 },
 				//上传之前进行文件格式校验
@@ -164,7 +177,9 @@
                         this.$message({
                             message: response.message,
                             type: 'success'
+
                         });
+                        this.createData();
                     }else{
                         this.$message.error(response.message);
                     }
@@ -242,8 +257,8 @@
                     var d = new Date();
                     this.initData(this.formatDate(d.getFullYear(), d.getMonth() + 1, 1));
                 },
-				//向前一个月
-                pickPre: function (year, month) {
+                    //向前一个月
+                    pickPre: function (year, month) {
                     // setDate(0); 上月最后一天
                     // setDate(-1); 上月倒数第二天
                     // setDate(dx) 参数dx为 上月最后一天的前后dx天

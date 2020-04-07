@@ -440,7 +440,7 @@
                 axios.post("/setmeal/findSetmealAndLinkedGroup.do?id="+row.id).then(res => {
                     this.$message({
                         message: res.data.message,
-                        type: 'success'  ///成功
+                        type: res.data.flag ? "success" : "error"
                     });
                     if (res.data.flag){
                         this.checkgroupIds=res.data.data.ids;
@@ -455,7 +455,7 @@
                 axios.post("/setmeal/deleteById.do?id="+row.id+"&checkgroupIds="+this.checkgroupIds).then(res => {
                     this.$message({
                         message: res.data.message,
-                        type: 'success'  ///成功
+                        type: res.data.flag ? "success" : "error"
                     });
                     if (res.data.flag){
                         this.findPage();

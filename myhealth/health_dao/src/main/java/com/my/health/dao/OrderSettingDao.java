@@ -1,6 +1,11 @@
 package com.my.health.dao;
 
+import com.my.health.pojo.MyOrderSetting;
 import com.my.health.pojo.OrderSetting;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: Deng
@@ -9,9 +14,11 @@ import com.my.health.pojo.OrderSetting;
  */
 public interface OrderSettingDao {
 
-    int isExist(Integer id);
+    int isExist(Date date);
 
     void updateOrder(OrderSetting orderSetting);
 
     void addOrder(OrderSetting orderSetting);
+
+    List<MyOrderSetting> getDataByYearAndMonth(Map map);
 }
