@@ -30,4 +30,5 @@ public interface CheckGroupDao {
 
     List<CheckGroup> findAllGroup();
 
+    List<CheckGroup> getSetmealLinkedGroups(Integer id);
 }

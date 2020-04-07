@@ -26,5 +26,5 @@ public interface CheckItemDao {
 
     void edit(CheckItem checkItem);
 
-
+    List<CheckItem> getGroupLinkedItem(Integer id);
 }

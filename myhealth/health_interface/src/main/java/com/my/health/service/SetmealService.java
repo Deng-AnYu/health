@@ -4,6 +4,7 @@ import com.my.health.pojo.PageResult;
 import com.my.health.pojo.QueryPageBean;
 import com.my.health.pojo.Setmeal;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,4 +22,8 @@ public interface SetmealService {
     Map findGroupAndLinkedItem(Integer id);
 
     void edit(Setmeal setmeal, Integer[] checkgroupIds);
+
+    List<Setmeal> getAll();
+
+    Setmeal getById(Integer id);
 }

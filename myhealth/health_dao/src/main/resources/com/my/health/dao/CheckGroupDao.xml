@@ -75,4 +75,15 @@
     <select id="findAllGroup" resultType="com.my.health.pojo.CheckGroup">
         select * from t_checkgroup
     </select>
+
+    <!--移动端的方法-->
+    <!--根据套餐id获取对应的检查组-->
+    <select id="getSetmealLinkedGroups" parameterType="int" resultType="com.my.health.pojo.CheckGroup">
+        SELECT
+        	*
+        FROM
+        	t_checkgroup
+        WHERE
+        	id IN ( SELECT checkgroup_id FROM t_setmeal_checkgroup WHERE setmeal_id = #{setmealId})
+    </select>
 </mapper>

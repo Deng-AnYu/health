@@ -444,8 +444,9 @@
                     });
                     if (res.data.flag){
                         this.checkgroupIds=res.data.data.ids;
-
                         this.formData=res.data.data.setmeal;
+                        // alert(res.data.data.setmeal.img);
+                    //    todo 打开编辑套餐窗口,里面的框不会显示图片,不知道这是不是bug
                     }
                 });
                 this.dialogFormVisible4Edit = true;

@@ -1,5 +1,6 @@
 package com.my.health.dao;
 
+import com.my.health.pojo.CheckGroup;
 import com.my.health.pojo.Setmeal;
 
 import java.util.HashMap;
@@ -26,4 +27,10 @@ public interface SetmealDao {
     Setmeal getSetmealById(Integer id);
 
     void editSetmeal(Setmeal setmeal);
+
+    List<Setmeal> getAll();
+
+    Setmeal getById(Integer id);
+
+    List<CheckGroup> getSetmealLinkedGroups(Integer id);
 }

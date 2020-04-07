@@ -149,7 +149,14 @@
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+        </dependency>
 
 
     </dependencies>

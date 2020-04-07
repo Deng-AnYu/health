@@ -8,9 +8,8 @@
         <selectKey resultType="int" order="AFTER" keyProperty="id">
             select LAST_INSERT_ID()
         </selectKey>
-      insert into t_setmeal
+        insert into t_setmeal
         (
-        id,
         name,
         code,
         helpCode,
@@ -21,9 +20,8 @@
         attention,
         img
         )
-              values
+        values
         (
-        #{id},
         #{name},
         #{code},
         #{helpCode},
@@ -38,7 +36,7 @@
 
     <!--根据套餐id,  在关系表中添加关联-->
     <insert id="addLinked" parameterType="map">
-        insert into t_setmeal_checkgroup (setmeal_id,checkgroup_id) value
+        insert into t_setmeal_checkgroup (setmeal_id,checkgroup_id) values
         (#{setmealId},${checkgroupId})
     </insert>
 
@@ -56,17 +54,17 @@
 
     <!--删除套餐的所有关联-->
     <delete id="deleteLinked" parameterType="int">
-        delete from t_setmeal_checkgroup where setmeal_id=#{id}
+        delete from t_setmeal_checkgroup where setmeal_id = #{id}
     </delete>
 
     <!--从中间表,找到这个套餐所有的关联的检查组-->
     <select id="findSetmealLinkedGroup" parameterType="int" resultType="int">
-        select checkgroup_id from t_setmeal_checkgroup where setmeal_id=#{id}
+        select checkgroup_id from t_setmeal_checkgroup where setmeal_id = #{id}
     </select>
 
     <!--根据id获取套餐-->
     <select id="getSetmealById" parameterType="int" resultType="com.my.health.pojo.Setmeal">
-        select * from t_setmeal where id=#{id}
+        select * from t_setmeal where id = #{id}
     </select>
 
     <update id="editSetmeal" parameterType="com.my.health.pojo.Setmeal">
@@ -102,5 +100,17 @@
         </set>
         where id = #{id}
     </update>
+
+    <!--移动端的方法-->
+    <!--获取所有套餐-->
+    <select id="getAll" resultType="com.my.health.pojo.Setmeal">
+        select * from t_setmeal
+    </select>
+
+    <!--移动端的方法-->
+    <!--获取所有套餐-->
+    <select id="getById" parameterType="int" resultType="com.my.health.pojo.Setmeal">
+        select * from t_setmeal where id = #{id}
+        </select>
 
 </mapper>

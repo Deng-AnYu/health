@@ -64,5 +64,15 @@
         where id = #{id}
     </update>
 
-
+    <!--移动端的方法-->
+    <!--根据检查组的id,获取所有关联的检查项-->
+    <select id="getGroupLinkedItem" parameterType="int" resultType="com.my.health.pojo.CheckItem">
+        SELECT
+	    *
+        FROM
+	    t_checkitem
+        WHERE
+	    id IN ( SELECT checkitem_id FROM t_checkgroup_checkitem WHERE checkgroup_id = #{groupId} )
+    </select>
 </mapper>
+
