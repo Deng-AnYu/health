@@ -15,4 +15,6 @@ public interface OrderSettingService {
     void add(ArrayList<OrderSetting> list);
 
     List<MyOrderSetting> getDataByYearAndMonth(String date);
+
+    void editOrderByBtn(OrderSetting orderSetting);
 }

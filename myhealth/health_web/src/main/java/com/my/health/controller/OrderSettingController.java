@@ -7,6 +7,7 @@ import com.my.health.pojo.OrderSetting;
 import com.my.health.pojo.Result;
 import com.my.health.service.OrderSettingService;
 import com.my.health.util.POIUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -71,5 +72,17 @@ public class OrderSettingController {
         }
     }
 
+    //单个设置预约数据
+    @RequestMapping("/editOrderByBtn")
+    public Result setOrderByBtn(@RequestBody OrderSetting orderSetting){
+        try {
+            orderSettingService.editOrderByBtn(orderSetting);
+            return new Result(true, MessageConstant.ORDERSETTING_SUCCESS);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, MessageConstant.ORDERSETTING_FAIL);
+        }
+
+    }
 
 }

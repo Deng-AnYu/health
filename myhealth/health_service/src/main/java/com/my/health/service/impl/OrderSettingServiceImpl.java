@@ -51,4 +51,17 @@ public class OrderSettingServiceImpl implements OrderSettingService {
         map.put("dateBegin",dateBegin);
         return orderSettingDao.getDataByYearAndMonth(map);
     }
+
+    //编辑单个预约信息
+    @Override
+    public void editOrderByBtn(OrderSetting orderSetting) {
+        int isExist = orderSettingDao.isExist(orderSetting.getOrderDate());
+        if (isExist > 0) {
+            //有,就更新
+            orderSettingDao.updateOrder(orderSetting);
+        } else {
+            //没有,就创建
+            orderSettingDao.addOrder(orderSetting);
+        }
+    }
 }
