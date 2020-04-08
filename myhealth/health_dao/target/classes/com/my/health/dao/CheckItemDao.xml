@@ -75,3 +75,4 @@
 	    id IN ( SELECT checkitem_id FROM t_checkgroup_checkitem WHERE checkgroup_id = #{groupId} )
     </select>
 </mapper>
+

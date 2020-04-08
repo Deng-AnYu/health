@@ -1,4 +1,7 @@
 com\my\health\constant\MessageConstant.class
+com\my\health\util\SMSUtils.class
+com\my\health\util\ValidateCodeUtils.class
 com\my\health\constant\RedisConstant.class
 com\my\health\util\QiniuUtils.class
+com\my\health\constant\RedisMessageConstant.class
 com\my\health\util\POIUtils.class

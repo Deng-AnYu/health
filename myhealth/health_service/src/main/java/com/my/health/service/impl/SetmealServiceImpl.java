@@ -8,9 +8,14 @@ import com.my.health.dao.CheckItemDao;
 import com.my.health.pojo.*;
 import com.my.health.dao.SetmealDao;
 import com.my.health.service.SetmealService;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,9 +32,20 @@ public class SetmealServiceImpl implements SetmealService {
     @Autowired
     private SetmealDao setmealDao;
     @Autowired
-    CheckGroupDao checkGroupDao;
+    private CheckGroupDao checkGroupDao;
     @Autowired
-    CheckItemDao checkItemDao;
+    private CheckItemDao checkItemDao;
+    @Autowired
+    private FreeMarkerConfigurer freeMarkerConfigurer;
+    //    @Autowired
+//    private FreeMarkerConfigurer configuration;
+    @Value("${out_put_path}")
+    private String outputpath;
+    @Value("${mobile_stemeal}")
+    private String mobile_stemeal;
+   @Value("${mobile_stemeal_detail}")
+    private String mobile_stemeal_detail;
+
 
     //添加套餐
     @Override
@@ -45,8 +61,12 @@ public class SetmealServiceImpl implements SetmealService {
                 setmealDao.addLinked(map);
             }
         }
-
+        //增加后,更新套餐列表页面
+        staticSetmealListHtml();
+        //还要更新这个套餐的套餐详情页面 todo
+        staticSetmealDetails(setmeal.getId());
     }
+
 
     @Override
     public PageResult findPage(QueryPageBean queryPageBean) {
@@ -66,6 +86,9 @@ public class SetmealServiceImpl implements SetmealService {
         //先把关联删了,再把套餐删了
         setmealDao.deleteLinked(id);
         setmealDao.deleteById(id);
+
+        staticSetmealListHtml();
+        deleteStaticHtml(id);
 
     }
 
@@ -100,6 +123,8 @@ public class SetmealServiceImpl implements SetmealService {
                 setmealDao.addLinked(map);
             }
         }
+        staticSetmealListHtml();
+        staticSetmealDetails(setmeal.getId());
 
 
     }
@@ -120,10 +145,73 @@ public class SetmealServiceImpl implements SetmealService {
         List<CheckGroup> groups = checkGroupDao.getSetmealLinkedGroups(id);
         //获取检查组中的检查项
         for (CheckGroup group : groups) {
-            List<CheckItem> items=checkItemDao.getGroupLinkedItem(group.getId());
+            List<CheckItem> items = checkItemDao.getGroupLinkedItem(group.getId());
             group.setCheckItems(items);
         }
         setmeal.setCheckGroups(groups);
         return setmeal;
     }
+
+    //更新套餐列表页面
+    private void staticSetmealListHtml() {
+
+        List<Setmeal> setmeals = setmealDao.getAll();
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("setmealList", setmeals);
+        //
+        createStaticHtml("mobile_setmeal.ftl", map, mobile_stemeal);
+
+    }
+
+    //根据套餐id来更新这个套餐的套餐详情页面
+    private void staticSetmealDetails(Integer id) {
+        Setmeal setmeal = getById(id);
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("setmeal",setmeal);
+        createStaticHtml("mobile_setmeal_detail.ftl",map,mobile_stemeal_detail+setmeal.getId());
+
+    }
+
+    //根据套餐id,删除静态页面
+    private void deleteStaticHtml(Integer id) {
+        File file = new File(outputpath + "\\" + mobile_stemeal_detail + id + ".html");
+        if (file.exists()){
+            file.delete();
+        }
+    }
+
+
+
+    //静态化移动端的套餐列表页面
+    //参数:
+    //模板名
+    //数据集合
+    //静态化后的页面名
+    private void createStaticHtml(String templateName, HashMap map, String htmlName) {
+        BufferedWriter writer = null;
+        try {
+            //设置模板
+            Configuration configuration = freeMarkerConfigurer.getConfiguration();
+            Template template = configuration.getTemplate(templateName);
+            //设置输出流
+            writer = new BufferedWriter(new FileWriter(outputpath + "\\" + htmlName + ".html"));
+            //根据map和输出流,在输出流指定的位置生成静态化页面
+            template.process(map, writer);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.flush();
+                    writer.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
+
 }
