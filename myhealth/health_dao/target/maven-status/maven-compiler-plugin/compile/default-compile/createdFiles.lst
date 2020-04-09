@@ -1,4 +1,6 @@
-com\my\health\dao\SetmealDao.class
+com\my\health\dao\OrderDao.class
 com\my\health\dao\CheckGroupDao.class
-com\my\health\dao\OrderSettingDao.class
 com\my\health\dao\CheckItemDao.class
+com\my\health\dao\SetmealDao.class
+com\my\health\dao\OrderSettingDao.class
+com\my\health\dao\MemberDao.class

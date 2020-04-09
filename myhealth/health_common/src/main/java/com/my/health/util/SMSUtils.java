@@ -58,7 +58,7 @@ public class SMSUtils {
 		SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
 		if (sendSmsResponse.getCode() != null && sendSmsResponse.getCode().equals("OK")) {
 			// 请求成功
-			System.out.println("请求成功");
+			System.out.println("验证码发送成功");
 		}
 	}
 

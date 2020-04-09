@@ -22,5 +22,4 @@
     <select id="getDataByYearAndMonth" parameterType="string" resultType="com.my.health.pojo.MyOrderSetting">
         select * from t_ordersetting where orderDate BETWEEN #{dateBegin} and #{dateEnd};
     </select>
-
 </mapper>

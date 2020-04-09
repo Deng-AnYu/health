@@ -21,4 +21,5 @@ public interface OrderSettingDao {
     void addOrder(OrderSetting orderSetting);
 
     List<MyOrderSetting> getDataByYearAndMonth(Map map);
+
 }

@@ -1,4 +1,6 @@
 com\my\health\service\CheckGroupService.class
+com\my\health\service\MemberService.class
 com\my\health\service\SetmealService.class
 com\my\health\service\CheckItemService.class
+com\my\health\service\OrderService.class
 com\my\health\service\OrderSettingService.class

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.my.health.dao.OrderDao">
+
+    <select id="isIdle" parameterType="date" resultType="int">
+        select number-reservations idle from t_ordersetting where orderDate = #{date}
+    </select>
+
+    <select id="isAlready" parameterType="map" resultType="int">
+          SELECT
+          	count( * )
+          FROM
+          	t_order
+          WHERE
+          	member_id = #{memberId}
+          	AND orderDate = #{orderDate}
+          	AND setmeal_id = #{setmealId}
+    </select>
+
+    <!--新增预约-->
+    <insert id="addOrder" parameterType="map">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+
+        INSERT INTO t_order ( member_id, orderDate, orderType, orderStatus, setmeal_id )
+          VALUES
+	      ( #{memberId}, #{orderDate}, #{orderType}, #{orderStatus}, #{setmealId})
+    </insert>
+
+    <select id="getDataForSuccess" parameterType="int" resultType="map">
+        SELECT
+        	orderType,
+        	orderDate,
+        	( SELECT NAME FROM t_member WHERE id = o.member_id ) member,
+        	( SELECT NAME FROM t_setmeal WHERE id = o.setmeal_id ) setmeal
+        FROM
+        	t_order o
+        WHERE
+        	id = #{id}
+    </select>
+</mapper>
