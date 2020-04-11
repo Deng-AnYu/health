@@ -11,6 +11,7 @@
         <module name="health_interface" />
         <module name="health_mobile_web" />
         <module name="health_pojo" />
+        <module name="health_security" />
         <module name="health_service" />
         <module name="health_web" />
         <module name="quartz" />

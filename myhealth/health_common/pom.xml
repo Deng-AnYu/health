@@ -12,9 +12,7 @@
     <artifactId>health_common</artifactId>
 
     <packaging>jar</packaging>
-
     <dependencies>
-
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
@@ -162,6 +160,5 @@
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
         </dependency>
-
     </dependencies>
 </project>

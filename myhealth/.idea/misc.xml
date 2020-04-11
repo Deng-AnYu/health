@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/health_dao" />
     <file type="web" url="file://$PROJECT_DIR$/health_mobile_web" />
+    <file type="web" url="file://$PROJECT_DIR$/health_security" />
     <file type="web" url="file://$PROJECT_DIR$/health_service" />
     <file type="web" url="file://$PROJECT_DIR$/health_web" />
     <file type="web" url="file://$PROJECT_DIR$/quartz" />
