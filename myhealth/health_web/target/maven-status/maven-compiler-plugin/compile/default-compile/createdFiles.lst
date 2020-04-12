@@ -1,4 +1,6 @@
 com\my\health\controller\CheckGroupController.class
 com\my\health\controller\SetmealController.class
 com\my\health\controller\CheckItemController.class
+com\my\health\security\SecurityUserService.class
+com\my\health\controller\UserController.class
 com\my\health\controller\OrderSettingController.class

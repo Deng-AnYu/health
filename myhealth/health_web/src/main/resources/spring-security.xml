@@ -26,15 +26,24 @@
 
     <security:http auto-config="true" use-expressions="true">
 
-        <security:intercept-url pattern="/main.html" access="isAuthenticated()"/>
 
-        <security:intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/pages/**" access="isAuthenticated()"/>
 
-        <security:form-login login-page="/login.html" login-processing-url="/login.do"
-                             authentication-failure-url="/login.html" default-target-url="/main.html"
+
+        <security:logout logout-url="/logout.do" logout-success-url="/login.html" invalidate-session="true"/>
+
+
+        <security:form-login login-page="/login.html"
+                             login-processing-url="/login.do"
+                             authentication-failure-url="/login.html"
+                             default-target-url="/pages/main.html"
                              always-use-default-target="true"/>
 
         <security:csrf disabled="true"/>
+        <security:headers>
+            <!--设置在页面可以通过iframe访问受保护的页面，默认为不允许访问-->
+            <security:frame-options policy="SAMEORIGIN"></security:frame-options>
+        </security:headers>
     </security:http>
 
     <!--配置认证管理器-->
@@ -56,4 +65,5 @@
 
     <!--开启权限注解支持-->
     <security:global-method-security pre-post-annotations="enabled"/>
+
 </beans>

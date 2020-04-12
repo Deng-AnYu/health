@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.my.health.pojo.Permission;
 import com.my.health.pojo.Role;
 import com.my.health.pojo.User;
+import com.my.health.service.UserService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -28,21 +29,29 @@ public class SecurityUserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         try {
-            User user = userService.findByUsername(s);
+            User user = userService.findUserByUsername(s);
             if (user == null) {
                 return null;
             }
             Set<Role> roles = user.getRoles();
             ArrayList<GrantedAuthority> list = new ArrayList<>();
-            //把权限全都放进去
-            for (Role role : roles) {
-                Set<Permission> permissions = role.getPermissions();
-                for (Permission permission : permissions) {
-                    list.add(new SimpleGrantedAuthority(permission.getKeyword()));
+            if (roles != null && roles.size() > 0) {
+                //把权限全都放进去
+                for (Role role : roles) {
+                    //把角色权限放进去
+                    list.add(new SimpleGrantedAuthority(role.getKeyword()));
+
+                    Set<Permission> permissions = role.getPermissions();
+                    if (permissions != null) {
+                        for (Permission permission : permissions) {
+                            //把权限放进去
+                            list.add(new SimpleGrantedAuthority(permission.getKeyword()));
+                        }
+                    }
+
                 }
             }
-
-            return new org.springframework.security.core.userdetails.User(s,user.getPassword(),list);
+            return new org.springframework.security.core.userdetails.User(s, user.getPassword(), list);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

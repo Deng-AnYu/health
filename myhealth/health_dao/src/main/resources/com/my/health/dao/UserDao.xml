@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.my.health.dao.UserDao">
+
+    <!--<select id="findByUsername" parameterType="string" resultType="com.my.health.pojo.User">-->
+        <!--select * from t_user where username = #{username}-->
+    <!--</select>-->
+
+    <!--根据用户名获取用户信息,及用户的角色权限信息和菜单信息-->
+   <select id="findUserByUsername" parameterType="string" resultMap="userMap">
+        select * from t_user where username = #{username}
+    </select>
+
+    <resultMap id="userMap" type="com.my.health.pojo.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <collection property="roles" column="id" ofType="com.my.health.pojo.Role"
+                select="com.my.health.dao.RoleDao.getRolesByUserId"/>
+    </resultMap>
+
+    <!--<resultMap id="userLazyAccounts" type="user">-->
+        <!--<id property="id" column="id"/>-->
+        <!--<result property="username" column="username"/>-->
+        <!--<result property="birthday" column="birthday"/>-->
+        <!--<result property="sex" column="sex"/>-->
+        <!--<result property="address" column="address"/>-->
+
+        <!--<collection property="accounts" ofType="account"-->
+                    <!--column="id" select="com.itheima.dao.AccountDao.findByUid"/>-->
+    <!--</resultMap>-->
+</mapper>

@@ -231,10 +231,17 @@
         //钩子函数，VUE对象初始化完成后自动执行
         created() {
             //异步加载检查项数据（不分页）
-            // this.findPage();
-            this.findAll();
+            this.findPage();
+            // this.findAll();
         },
         methods: {
+            //权限不足提示
+            permissionNotEnough(){
+                this.$message({
+                    type: 'error',
+                    message: '权限不足'
+                });
+            },
             //编辑
             handleEdit() {
                 //提交表单之前 一般都要进行表单验证
@@ -368,7 +375,12 @@
                         //查询结果
                         this.findPage();
 
-                    })
+                    }).catch((error)=>{
+                        if (error = "Error: Request failed with status code 403") {
+                            this.permissionNotEnough();
+                        }
+
+                    });
                     /*this.$message({
                         type: 'success',
                         message: '删除成功!'
