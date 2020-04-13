@@ -5,53 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="718d981f-b5fa-485e-bc0d-f2d13df01500" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/health_dao/src/main/java/com/my/health/dao/ReportDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/health_dao/src/main/resources/com/my/health/dao/ReportDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/health_interface/src/main/java/com/my/health/service/ReportService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/health_service/src/main/java/com/my/health/service/impl/ReportServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/health_web/src/main/java/com/my/health/controller/ReportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/health_web/src/main/webapp/demo_ECharts1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/health_web/src/main/webapp/pages/report_business.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/health_web/src/main/webapp/pages/report_member.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/health_web/src/main/webapp/pages/report_setmeal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/health_web/src/main/webapp/plugins/echarts/echarts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/health_web/src/main/webapp/template/report_template.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_common/target/health_common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_common/target/health_common-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_common/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/health_common/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_dao/src/main/java/com/my/health/dao/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/health_dao/src/main/java/com/my/health/dao/MemberDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_dao/src/main/java/com/my/health/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/health_dao/src/main/java/com/my/health/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_dao/src/main/resources/com/my/health/dao/MemberDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_dao/src/main/resources/com/my/health/dao/MemberDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_dao/src/main/resources/com/my/health/dao/OrderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/health_dao/src/main/resources/com/my/health/dao/OrderDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_dao/target/health_dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_dao/target/health_dao-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_dao/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/health_dao/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_interface/target/health_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_interface/target/health_interface-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_interface/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/health_interface/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_interface/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_interface/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_interface/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_interface/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_pojo/target/health_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_pojo/target/health_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_pojo/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/health_pojo/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_service/target/health_service-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/health_service/target/health_service-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_service/target/health_service-1.0-SNAPSHOT/WEB-INF/lib/health_common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_service/target/health_service-1.0-SNAPSHOT/WEB-INF/lib/health_common-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_service/target/health_service-1.0-SNAPSHOT/WEB-INF/lib/health_dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_service/target/health_service-1.0-SNAPSHOT/WEB-INF/lib/health_dao-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_service/target/health_service-1.0-SNAPSHOT/WEB-INF/lib/health_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_service/target/health_service-1.0-SNAPSHOT/WEB-INF/lib/health_interface-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_service/target/health_service-1.0-SNAPSHOT/WEB-INF/lib/health_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_service/target/health_service-1.0-SNAPSHOT/WEB-INF/lib/health_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/health_service/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_web/src/main/webapp/pages/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/health_web/src/main/webapp/pages/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_web/target/health_web-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/health_web/target/health_web-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_web/target/health_web-1.0-SNAPSHOT/WEB-INF/lib/health_common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_web/target/health_web-1.0-SNAPSHOT/WEB-INF/lib/health_common-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_web/target/health_web-1.0-SNAPSHOT/WEB-INF/lib/health_interface-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_web/target/health_web-1.0-SNAPSHOT/WEB-INF/lib/health_interface-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_web/target/health_web-1.0-SNAPSHOT/WEB-INF/lib/health_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/health_web/target/health_web-1.0-SNAPSHOT/WEB-INF/lib/health_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_web/target/health_web-1.0-SNAPSHOT/pages/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/health_web/target/health_web-1.0-SNAPSHOT/pages/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_web/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/health_web/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health_web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/health_web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -118,7 +72,7 @@
           <entry key="html" value="2734" />
           <entry key="java" value="12776" />
           <entry key="properties" value="30" />
-          <entry key="txt" value="404" />
+          <entry key="txt" value="420" />
           <entry key="vmoptions" value="12" />
           <entry key="xml" value="4795" />
         </counts>
@@ -129,7 +83,7 @@
           <entry key="FTL" value="1" />
           <entry key="HTML" value="2734" />
           <entry key="JAVA" value="12776" />
-          <entry key="PLAIN_TEXT" value="431" />
+          <entry key="PLAIN_TEXT" value="447" />
           <entry key="Properties" value="30" />
           <entry key="SQL" value="115" />
           <entry key="XML" value="4779" />
@@ -189,7 +143,7 @@
         <entry file="file://$PROJECT_DIR$/health_web/src/main/java/com/my/health/controller/ReportController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="203">
-              <caret line="149" column="24" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
+              <caret line="149" column="35" lean-forward="true" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -589,7 +543,7 @@
     <property name="SearchEverywhereHistoryKey" value="pr&#9;FILE&#9;jar://D:/Develop/apache-maven/repository/org/springframework/spring-core/5.0.5.RELEASE/spring-core-5.0.5.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class&#10;DeleteQiNiuTest&#9;FILE&#9;file://D:/Develop/IDEA/Code_health/myhealth/health_web/src/test/java/com/my/health/test/DeleteQiNiuTest.java&#10;editLinked&#9;PSI&#9;JAVA://com.my.health.dao.CheckGroupDao#editLinked" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586783742120" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586785968856" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/health_interface/src/main/java/com/my/health" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
@@ -813,7 +767,7 @@
       <workItem from="1586587412691" duration="25923000" />
       <workItem from="1586653390433" duration="16750000" />
       <workItem from="1586741739429" duration="2713000" />
-      <workItem from="1586759357092" duration="19874000" />
+      <workItem from="1586759357092" duration="20881000" />
     </task>
     <task id="LOCAL-00001" summary="health第二天的代码&#10; 正在做添加检查组">
       <created>1585925455517</created>
@@ -934,7 +888,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586686358880</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="2020-4-12-18.12&#10;  做完了第八章的内容&#10;  我准备搞一搞服务器的事了">
+      <created>1586783834211</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1586783834211</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -970,7 +931,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274503000" />
+    <option name="totallyTimeSpent" value="275510000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -995,7 +956,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32808024" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.37535816" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49833888" visible="true" weight="0.4269341" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49833888" weight="0.4269341" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295129" />
@@ -1004,7 +965,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5016611" side_tool="true" weight="0.35673353" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.2846924" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" visible="true" weight="0.28366762" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32904148" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24983388" />
@@ -1112,7 +1073,8 @@
     <MESSAGE value="health_day10&#10;2020-4-11-23.13&#10;  做security之前" />
     <MESSAGE value="health_day10&#10;2020-4-11-23.34&#10;  做了service,但是具体的方法都没有&#10;  做了配置文件,但是不确定做完了没有,要再检查" />
     <MESSAGE value="2020-4-12-18.12&#10;  做完了第七章的内容" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020-4-12-18.12&#10;  做完了第七章的内容" />
+    <MESSAGE value="2020-4-12-18.12&#10;  做完了第八章的内容&#10;  我准备搞一搞服务器的事了" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020-4-12-18.12&#10;  做完了第八章的内容&#10;  我准备搞一搞服务器的事了" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1552,7 +1514,7 @@
     <entry file="file://$PROJECT_DIR$/health_web/src/main/java/com/my/health/controller/ReportController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
-          <caret line="149" column="24" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
+          <caret line="149" column="35" lean-forward="true" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
