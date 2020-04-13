@@ -17,5 +17,8 @@
         <module name="quartz" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo_ECharts" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
